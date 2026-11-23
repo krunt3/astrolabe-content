@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-11-23.2",
+  "contentVersion": "2026-11-23.3",
   "minAppVersion": "0.1.0",
 
   "progression": {
@@ -43,20 +43,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "wSvMZn6wZDE",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Evan Anta",
+              "title": "LES TROIS LOIS DE KEPLER ! 🪐",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "eODOYqsW5HM",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "I Teach You Science",
+              "title": "Kepler's 3 Laws Explained | Earth & Space Science",
               "difficulty": "intermediate"
             }
           ],
@@ -117,20 +117,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "28olG-_EMY8",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Evan Anta",
+              "title": "LA LOI DE LA GRAVITATION UNIVERSELLE !",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "SN1Q5ru2fI0",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Veritasium",
+              "title": "Calculating Gravitational Attraction",
               "difficulty": "intermediate"
             }
           ],
@@ -208,20 +208,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "2b1Ou4xO10A",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Les génies des sciences",
+              "title": "Comment calculer simplement la vitesse de libération de la Terre?",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "NoVCtNvRtRI",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "The Organic Chemistry Tutor",
+              "title": "Escape Velocity",
               "difficulty": "intermediate"
             }
           ],
@@ -305,20 +305,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "nqZ6yJS8hiE",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Comment t'expliquer",
+              "title": "L'ANNÉE-LUMIÈRE, qu'est-ce que c'est? Calculer et convertir des km en a.l.",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "CiDkNvaOtB4",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "ScienceOnline",
+              "title": "Measuring the Universe",
               "difficulty": "intermediate"
             }
           ],
@@ -406,20 +406,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "SnhRm74iQFQ",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Palais de la découverte",
+              "title": "Mesurer la distance des étoiles (2/2): la parallaxe - Les petites découvertes - épisode 34",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "bY-DnqSvWeg",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "kineticcanvas",
+              "title": "Measuring Distances to Stars: Parallax, Parsecs and Standard Candles",
               "difficulty": "intermediate"
             }
           ],
@@ -503,20 +503,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "I-xNkwyhRn8",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "yvan pouchat",
+              "title": "loi de wien et température de surface des étoiles. Enseignement scientifique.",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "X2iOOoCbydY",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Khan Academy India - English",
+              "title": "Wien Displacement law | Thermal properties of matter | Grade 11 | Physics",
               "difficulty": "intermediate"
             }
           ],
@@ -593,20 +593,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "oL0aEz47oXc",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "12 Parsecs",
+              "title": "Les étoiles : comment on les classe ?",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "e8RH_YhQ6Ag",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Scott Manley",
+              "title": "KGBFOAM & OBAFGKM - Where Did Star Types Come From?",
               "difficulty": "intermediate"
             }
           ],
@@ -669,20 +669,20 @@
           "videos": [
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR",
+              "videoId": "IbxvkwbKAVY",
               "lang": "fr",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "Questions de science",
+              "title": "Le REDSHIFT : comment mesurer l'âge et la distance des galaxies ?",
               "startSec": 0,
               "endSec": null,
               "difficulty": "intro"
             },
             {
               "provider": "youtube",
-              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "videoId": "A-vHAxc6djs",
               "lang": "en",
-              "channel": "Nom de la chaîne",
-              "title": "Titre de la vidéo",
+              "channel": "London Jenks",
+              "title": "Hubble's Law, the Doppler Effect, and an Expanding Universe",
               "difficulty": "intermediate"
             }
           ],
