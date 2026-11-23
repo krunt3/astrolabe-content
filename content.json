@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026-11-21.1",
+  "minAppVersion": "0.1.0",
+
+  "progression": {
+    "xpPerLevel": [0, 100, 250, 450, 700, 1000, 1400, 1900],
+    "levelTitles": [
+      "Observatrice débutante",
+      "Chasseuse d'étoiles",
+      "Cartographe du ciel",
+      "Navigatrice orbitale",
+      "Analyste stellaire",
+      "Cosmologiste",
+      "Astrophysicienne",
+      "Chercheuse"
+    ],
+    "rules": {
+      "lessonCompleteXp": 20,
+      "quizPassThreshold": 0.7,
+      "quizCorrectXp": 5,
+      "reviewCorrectXp": 3,
+      "retryPenaltyXp": 0
+    }
+  },
+
+  "tracks": [
+    {
+      "id": "mecanique-celeste",
+      "title": "Mécanique céleste",
+      "description": "Du mouvement des planètes à la gravitation.",
+      "lessons": [
+        {
+          "id": "kepler-3-lois",
+          "title": "Les trois lois de Kepler",
+          "level": 1,
+          "prerequisites": [],
+          "mathNeeded": ["proportionnalité", "puissances"],
+          "estimatedMinutes": 25,
+
+          "summary": "Texte court écrit/validé par toi (pas copié d'une source).",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Lois_de_Kepler",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "kepler-third-law",
+            "inputs": [
+              { "name": "a", "label": "Demi-grand axe (UA)", "min": 0.1, "max": 50, "default": 1 }
+            ],
+            "formula": "T = a^(3/2)",
+            "outputLabel": "Période orbitale (années)"
+          },
+
+          "quiz": [
+            {
+              "id": "kepler-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Quelle est la forme de l'orbite d'une planète selon Kepler ?",
+              "choices": ["Un cercle parfait", "Une ellipse", "Une spirale", "Une parabole"],
+              "answerIndex": 1,
+              "explanation": "Explication courte.",
+              "reviewedBy": "a-valider",
+              "tags": ["kepler", "orbite"]
+            },
+            {
+              "id": "kepler-q2",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Un astéroïde a un demi-grand axe de 4 UA. Quelle est sa période (en années) ?",
+              "answer": 8,
+              "tolerance": 0.05,
+              "explanation": "T = a^(3/2) = 4^(3/2) = 8.",
+              "reviewedBy": "a-valider",
+              "tags": ["kepler", "calcul"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "newsSources": [
+    { "id": "cnes", "type": "rss", "lang": "fr", "url": "URL_RSS_A_REMPLIR" },
+    { "id": "arxiv-astro-ph", "type": "arxiv", "category": "astro-ph" }
+  ]
+}
