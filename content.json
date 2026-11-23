@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-11-23.3",
+  "contentVersion": "2026-11-23.4",
   "minAppVersion": "0.1.0",
 
   "progression": {
@@ -699,6 +699,12 @@
               "lang": "fr",
               "url": "https://fr.wikipedia.org/wiki/D%C3%A9calage_vers_le_rouge",
               "role": "go-further"
+            },
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Cosmologie",
+              "role": "go-further"
             }
           ],
 
@@ -763,8 +769,12 @@
 
   "newsSources": [
     { "id": "cnes", "type": "rss", "lang": "fr", "label": "CNES", "url": "https://cnes.fr/rss/communiques" },
+    { "id": "casspla-haut", "type": "rss", "lang": "fr", "label": "Ça Se Passe Là-Haut", "url": "https://casepasselahaut.lepodcast.fr/rss" },
+    { "id": "nasa-news", "type": "rss", "lang": "en", "label": "NASA", "url": "https://www.nasa.gov/news-release/feed/" },
+    { "id": "astrobites", "type": "rss", "lang": "en", "label": "Astrobites", "url": "https://astrobites.org/feed/" },
     { "id": "arxiv-astro-ph", "type": "arxiv", "lang": "en", "label": "arXiv astro-ph", "category": "astro-ph" },
     { "id": "nasa-apod", "type": "apod", "lang": "en", "label": "NASA — Image du jour" },
-    { "id": "chaine-astro", "type": "youtube", "lang": "fr", "label": "AstronoGeek", "channelId": "UC5X4e8ScZI2AFd_vkjSoyoQ" }
+    { "id": "chaine-astro", "type": "youtube", "lang": "fr", "label": "AstronoGeek", "channelId": "UC5X4e8ScZI2AFd_vkjSoyoQ" },
+    { "id": "pbs-spacetime", "type": "youtube", "lang": "en", "label": "PBS Space Time", "channelId": "UC7_gcs09iThXybpVgjHZ_7g" }
   ]
 }
