@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-11-23.1",
+  "contentVersion": "2026-11-23.2",
   "minAppVersion": "0.1.0",
 
   "progression": {
@@ -762,9 +762,9 @@
   ],
 
   "newsSources": [
-    { "id": "cnes", "type": "rss", "lang": "fr", "label": "CNES", "url": "URL_RSS_A_REMPLIR" },
+    { "id": "cnes", "type": "rss", "lang": "fr", "label": "CNES", "url": "https://cnes.fr/rss/communiques" },
     { "id": "arxiv-astro-ph", "type": "arxiv", "lang": "en", "label": "arXiv astro-ph", "category": "astro-ph" },
     { "id": "nasa-apod", "type": "apod", "lang": "en", "label": "NASA — Image du jour" },
-    { "id": "chaine-astro", "type": "youtube", "lang": "fr", "label": "Chaîne à choisir", "channelId": "CHANNEL_ID_A_REMPLIR" }
+    { "id": "chaine-astro", "type": "youtube", "lang": "fr", "label": "AstronoGeek", "channelId": "UC5X4e8ScZI2AFd_vkjSoyoQ" }
   ]
 }
