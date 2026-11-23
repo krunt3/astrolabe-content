@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-11-21.1",
+  "contentVersion": "2026-11-23.1",
   "minAppVersion": "0.1.0",
 
   "progression": {
@@ -38,7 +38,7 @@
           "mathNeeded": ["proportionnalité", "puissances"],
           "estimatedMinutes": 25,
 
-          "summary": "Texte court écrit/validé par toi (pas copié d'une source).",
+          "summary": "Au début du XVIIe siècle, Kepler analyse les observations très précises de Tycho Brahe et découvre que les planètes ne tournent pas en cercles parfaits autour du Soleil, mais en ellipses. Il énonce trois lois : (1) l'orbite est une ellipse dont le Soleil occupe un foyer, (2) une planète balaie des aires égales en des temps égaux (elle va plus vite près du Soleil), (3) le carré de la période orbitale est proportionnel au cube du demi-grand axe. Exprimée en années et en unités astronomiques (UA), cette troisième loi s'écrit simplement T² = a³.",
 
           "videos": [
             {
@@ -87,7 +87,7 @@
               "text": "Quelle est la forme de l'orbite d'une planète selon Kepler ?",
               "choices": ["Un cercle parfait", "Une ellipse", "Une spirale", "Une parabole"],
               "answerIndex": 1,
-              "explanation": "Explication courte.",
+              "explanation": "La première loi de Kepler dit que l'orbite est une ellipse dont le Soleil occupe l'un des deux foyers (pas le centre).",
               "reviewedBy": "a-valider",
               "tags": ["kepler", "orbite"]
             },
@@ -103,13 +103,668 @@
               "tags": ["kepler", "calcul"]
             }
           ]
+        },
+        {
+          "id": "gravitation-newton",
+          "title": "La gravitation universelle",
+          "level": 1,
+          "prerequisites": ["kepler-3-lois"],
+          "mathNeeded": ["puissances", "notation scientifique"],
+          "estimatedMinutes": 20,
+
+          "summary": "Kepler décrivait COMMENT les planètes bougent, mais pas POURQUOI. En 1687, Newton répond : deux corps s'attirent avec une force proportionnelle au produit de leurs masses et inversement proportionnelle au carré de la distance qui les sépare : F = G·m₁·m₂/r². La constante G (6,674×10⁻¹¹ N·m²/kg²) est universelle : elle vaut la même chose entre deux pommes, entre la Terre et la Lune, ou entre deux galaxies. C'est cette même loi qui explique à la fois la chute d'un objet et les trois lois de Kepler.",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Gravitation_universelle",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "newton-gravitation-satellite",
+            "inputs": [
+              { "name": "mass", "label": "Masse du satellite (kg)", "min": 100, "max": 500000, "default": 1000 },
+              { "name": "distance", "label": "Distance au centre de la Terre (km)", "min": 6400, "max": 42000, "default": 6771 }
+            ],
+            "formula": "F = G*M_terre*m / r²",
+            "outputLabel": "Force gravitationnelle (N)"
+          },
+
+          "quiz": [
+            {
+              "id": "newton-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Selon la loi de Newton, si on double la distance entre deux corps, la force gravitationnelle est :",
+              "choices": ["Multipliée par 2", "Multipliée par 4", "Divisée par 2", "Divisée par 4"],
+              "answerIndex": 3,
+              "explanation": "La force varie comme l'inverse du carré de la distance (1/r²) : doubler r divise F par 2² = 4.",
+              "reviewedBy": "a-valider",
+              "tags": ["newton", "proportionnalité"]
+            },
+            {
+              "id": "newton-q2",
+              "type": "single",
+              "difficulty": 1,
+              "text": "La constante G dans F = G·m₁·m₂/r² est :",
+              "choices": [
+                "Une valeur qui dépend des deux masses",
+                "Une constante universelle, la même partout dans l'Univers",
+                "Une valeur qui change selon la distance",
+                "Une unité de masse"
+              ],
+              "answerIndex": 1,
+              "explanation": "G ≈ 6,674×10⁻¹¹ N·m²/kg² est une constante fondamentale, mesurée expérimentalement, valable partout dans l'Univers.",
+              "reviewedBy": "a-valider",
+              "tags": ["newton", "constante"]
+            },
+            {
+              "id": "newton-q3",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Un satellite de 1000 kg est à 7000 km du centre de la Terre (masse 5,97×10²⁴ kg). Quelle est la force gravitationnelle exercée sur lui, en newtons ?",
+              "answer": 8130,
+              "tolerance": 0.05,
+              "explanation": "F = G·M·m/r² = 6,674×10⁻¹¹ × 5,97×10²⁴ × 1000 / (7×10⁶)² ≈ 8130 N.",
+              "reviewedBy": "a-valider",
+              "tags": ["newton", "calcul"]
+            }
+          ]
+        },
+        {
+          "id": "vitesse-liberation",
+          "title": "La vitesse de libération",
+          "level": 2,
+          "prerequisites": ["gravitation-newton"],
+          "mathNeeded": ["racine carrée", "puissances", "notation scientifique"],
+          "estimatedMinutes": 20,
+
+          "summary": "Lance une balle vers le haut : elle retombe. Lance-la plus vite : elle va plus loin avant de retomber. À partir d'une certaine vitesse, un objet ne retombe plus jamais : il s'échappe définitivement de l'attraction gravitationnelle du corps qu'il quitte. C'est la vitesse de libération : v = √(2GM/r), où M est la masse du corps quitté et r la distance à son centre. Pour la Terre, au niveau du sol, elle vaut environ 11,2 km/s — c'est pour cela qu'une fusée doit atteindre une vitesse énorme pour quitter l'orbite terrestre.",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Vitesse_de_lib%C3%A9ration",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "vitesse-liberation-terre",
+            "inputs": [
+              { "name": "distance", "label": "Distance au centre de la Terre (km)", "min": 6400, "max": 42000, "default": 6771 }
+            ],
+            "formula": "v = sqrt(2*G*M_terre / r)",
+            "outputLabel": "Vitesse de libération (km/s)"
+          },
+
+          "quiz": [
+            {
+              "id": "liberation-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "La vitesse de libération est la vitesse minimale pour :",
+              "choices": [
+                "Rester en orbite circulaire",
+                "Échapper définitivement à l'attraction gravitationnelle d'un corps",
+                "Atteindre la vitesse de la lumière",
+                "Freiner un satellite"
+              ],
+              "answerIndex": 1,
+              "explanation": "Au-delà de cette vitesse, l'objet ne retombe jamais : il s'éloigne indéfiniment.",
+              "reviewedBy": "a-valider",
+              "tags": ["liberation", "definition"]
+            },
+            {
+              "id": "liberation-q2",
+              "type": "single",
+              "difficulty": 2,
+              "text": "Si on augmente l'altitude (donc la distance au centre de la Terre), la vitesse de libération :",
+              "choices": ["Augmente", "Diminue", "Reste constante", "Devient nulle"],
+              "answerIndex": 1,
+              "explanation": "v = √(2GM/r) : quand r augmente, v diminue.",
+              "reviewedBy": "a-valider",
+              "tags": ["liberation", "proportionnalité"]
+            },
+            {
+              "id": "liberation-q3",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Calcule la vitesse de libération depuis la surface de la Terre (rayon ≈ 6400 km, masse 5,97×10²⁴ kg), en km/s.",
+              "answer": 11.2,
+              "tolerance": 0.05,
+              "explanation": "v = √(2GM/r) ≈ √(2 × 6,674×10⁻¹¹ × 5,97×10²⁴ / 6,4×10⁶) ≈ 11,2 km/s, la valeur réelle bien connue.",
+              "reviewedBy": "a-valider",
+              "tags": ["liberation", "calcul"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mesurer-univers",
+      "title": "Mesurer l'Univers",
+      "description": "Des unités de distance aux méthodes pour mesurer l'incommensurable.",
+      "lessons": [
+        {
+          "id": "unite-astronomique-annee-lumiere",
+          "title": "L'unité astronomique et l'année-lumière",
+          "level": 1,
+          "prerequisites": [],
+          "mathNeeded": ["notation scientifique", "conversions d'unités"],
+          "estimatedMinutes": 15,
+
+          "summary": "Le kilomètre devient vite peu pratique en astronomie. Deux unités plus adaptées : l'unité astronomique (UA), la distance moyenne Terre-Soleil, soit environ 149,6 millions de km — pratique à l'échelle du Système solaire. Et l'année-lumière (al), la distance parcourue par la lumière en une année (environ 9460 milliards de km, soit 63 241 UA) — indispensable dès qu'on parle des étoiles. L'étoile la plus proche du Soleil, Proxima du Centaure, est à 4,24 années-lumière : sa lumière met 4 ans et 3 mois à nous parvenir.",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Unit%C3%A9_astronomique",
+              "role": "go-further"
+            },
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Ann%C3%A9e-lumi%C3%A8re",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "ua-vers-km",
+            "inputs": [
+              { "name": "ua", "label": "Distance (unités astronomiques)", "min": 0.1, "max": 50, "default": 1 }
+            ],
+            "formula": "d(km) = ua * 149 597 870",
+            "outputLabel": "Distance équivalente (km)"
+          },
+
+          "quiz": [
+            {
+              "id": "ual-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Une année-lumière mesure :",
+              "choices": [
+                "Le temps que met la lumière à atteindre la Terre",
+                "La distance parcourue par la lumière en une année",
+                "La distance moyenne Terre-Soleil",
+                "La vitesse de la lumière"
+              ],
+              "answerIndex": 1,
+              "explanation": "Malgré son nom, l'année-lumière est une distance, pas une durée : celle parcourue par la lumière en une année.",
+              "reviewedBy": "a-valider",
+              "tags": ["unites", "definition"]
+            },
+            {
+              "id": "ual-q2",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Combien d'unités astronomiques (UA) mesure une distance de 2 années-lumière ?",
+              "answer": 126482,
+              "tolerance": 0.05,
+              "explanation": "1 année-lumière ≈ 63 241 UA, donc 2 années-lumière ≈ 126 482 UA.",
+              "reviewedBy": "a-valider",
+              "tags": ["unites", "calcul"]
+            },
+            {
+              "id": "ual-q3",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Pourquoi utilise-t-on l'année-lumière plutôt que le kilomètre pour les distances entre étoiles ?",
+              "choices": [
+                "Parce que le kilomètre n'existe pas en dehors du Système solaire",
+                "Parce que les nombres en kilomètres seraient d'une taille peu pratique à manipuler",
+                "Parce que la lumière ne voyage pas en kilomètres",
+                "Parce que c'est une unité légale obligatoire"
+              ],
+              "answerIndex": 1,
+              "explanation": "Exprimer des milliers de milliards de kilomètres est peu lisible ; l'année-lumière donne des nombres plus simples.",
+              "reviewedBy": "a-valider",
+              "tags": ["unites", "pourquoi"]
+            }
+          ]
+        },
+        {
+          "id": "parallaxe-stellaire",
+          "title": "La parallaxe stellaire",
+          "level": 2,
+          "prerequisites": ["unite-astronomique-annee-lumiere"],
+          "mathNeeded": ["proportionnalité inverse", "angles (secondes d'arc)"],
+          "estimatedMinutes": 20,
+
+          "summary": "Ferme un œil, regarde ton doigt tendu devant un mur, puis change d'œil : ton doigt semble sauter par rapport au mur. C'est la parallaxe. Les astronomes font pareil avec la Terre : en observant une étoile proche à six mois d'intervalle (quand la Terre est aux deux points opposés de son orbite), elle semble légèrement se déplacer par rapport aux étoiles très lointaines, immobiles en arrière-plan. Plus l'étoile est proche, plus ce déplacement (la parallaxe p, mesurée en secondes d'arc) est grand. La relation est simple : d (en parsecs) = 1/p. Un parsec (≈3,26 années-lumière) est d'ailleurs défini à partir de cette méthode.",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Parallaxe",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "parallaxe-distance",
+            "inputs": [
+              { "name": "parallax", "label": "Parallaxe (secondes d'arc)", "min": 0.01, "max": 0.8, "default": 0.1 }
+            ],
+            "formula": "d(pc) = 1 / p",
+            "outputLabel": "Distance (parsecs)"
+          },
+
+          "quiz": [
+            {
+              "id": "parallaxe-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "La parallaxe stellaire est observée :",
+              "choices": [
+                "À deux moments de la journée",
+                "À six mois d'intervalle, depuis deux points opposés de l'orbite terrestre",
+                "Avec deux télescopes différents en même temps",
+                "Une seule fois, par définition"
+              ],
+              "answerIndex": 1,
+              "explanation": "Six mois d'écart donnent la plus grande base de mesure possible : le diamètre de l'orbite terrestre.",
+              "reviewedBy": "a-valider",
+              "tags": ["parallaxe", "methode"]
+            },
+            {
+              "id": "parallaxe-q2",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Une étoile a une parallaxe de 0,2 seconde d'arc. Quelle est sa distance en parsecs ?",
+              "answer": 5,
+              "tolerance": 0.05,
+              "explanation": "d = 1/p = 1/0,2 = 5 parsecs.",
+              "reviewedBy": "a-valider",
+              "tags": ["parallaxe", "calcul"]
+            },
+            {
+              "id": "parallaxe-q3",
+              "type": "single",
+              "difficulty": 2,
+              "text": "Plus une étoile est proche, plus sa parallaxe est :",
+              "choices": ["Petite", "Grande", "Nulle", "Négative"],
+              "answerIndex": 1,
+              "explanation": "d = 1/p : une distance plus petite correspond, par cette relation inverse, à une parallaxe plus grande.",
+              "reviewedBy": "a-valider",
+              "tags": ["parallaxe", "proportionnalité"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lumiere-etoiles",
+      "title": "Lumière et étoiles",
+      "description": "Ce que la lumière d'une étoile révèle sur elle.",
+      "lessons": [
+        {
+          "id": "spectre-loi-wien",
+          "title": "Le spectre des étoiles et la loi de Wien",
+          "level": 1,
+          "prerequisites": [],
+          "mathNeeded": ["proportionnalité inverse", "notation scientifique"],
+          "estimatedMinutes": 20,
+
+          "summary": "Chaque étoile émet de la lumière sur tout un spectre de couleurs, mais avec un maximum d'intensité à une longueur d'onde précise — et cette longueur d'onde dépend uniquement de la température de surface. C'est la loi de Wien : λmax = b/T, où b ≈ 2,898×10⁻³ m·K. Une étoile chaude (plus de 10 000 K) a son maximum dans le bleu ou l'ultraviolet ; une étoile froide (moins de 4000 K) l'a dans le rouge ou l'infrarouge. C'est pour cela que la couleur d'une étoile est un thermomètre à distance : Bételgeuse est rouge (froide, ~3500 K), Rigel est bleue (chaude, ~12000 K).",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Loi_de_Wien",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "loi-wien",
+            "inputs": [
+              { "name": "temperature", "label": "Température de surface (K)", "min": 3000, "max": 40000, "default": 5778 }
+            ],
+            "formula": "lambda_max = b / T",
+            "outputLabel": "Longueur d'onde du maximum d'émission (nm)"
+          },
+
+          "quiz": [
+            {
+              "id": "wien-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Selon la loi de Wien, une étoile plus chaude émet un rayonnement dont le maximum se situe :",
+              "choices": [
+                "À une longueur d'onde plus grande (plus rouge)",
+                "À une longueur d'onde plus petite (plus bleue)",
+                "Toujours dans le visible",
+                "À une longueur d'onde constante"
+              ],
+              "answerIndex": 1,
+              "explanation": "λmax = b/T : plus T est grand, plus λmax est petit — donc plus la couleur dominante est bleue.",
+              "reviewedBy": "a-valider",
+              "tags": ["wien", "proportionnalité"]
+            },
+            {
+              "id": "wien-q2",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Le Soleil a une température de surface d'environ 5778 K. À quelle longueur d'onde (en nanomètres) se situe le maximum de son émission ?",
+              "answer": 501,
+              "tolerance": 0.05,
+              "explanation": "λmax = b/T = 2,898×10⁻³ / 5778 ≈ 501 nm (vert-jaune) — proche du maximum de sensibilité de l'œil humain, ce n'est pas un hasard.",
+              "reviewedBy": "a-valider",
+              "tags": ["wien", "calcul"]
+            },
+            {
+              "id": "wien-q3",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Une étoile bleue est, par rapport à une étoile rouge :",
+              "choices": ["Plus froide en surface", "Plus chaude en surface", "De même température", "Plus petite"],
+              "answerIndex": 1,
+              "explanation": "Le bleu correspond à un maximum d'émission à courte longueur d'onde, donc à une température de surface plus élevée.",
+              "reviewedBy": "a-valider",
+              "tags": ["wien", "couleur"]
+            }
+          ]
+        },
+        {
+          "id": "classification-stellaire",
+          "title": "La classification spectrale des étoiles",
+          "level": 2,
+          "prerequisites": ["spectre-loi-wien"],
+          "mathNeeded": [],
+          "estimatedMinutes": 15,
+
+          "summary": "Les astronomes classent les étoiles en sept classes spectrales principales, de la plus chaude à la plus froide : O, B, A, F, G, K, M (moyen mnémotechnique : « Oh Be A Fine Girl/Guy, Kiss Me »). Chaque classe correspond à une plage de température de surface et donc, via la loi de Wien, à une couleur dominante : O et B sont bleues (>10 000 K), A et F blanches à jaune pâle, G jaunes (le Soleil est une étoile G, ~5778 K), K orange, M rouges (<4000 K). Cette classification, combinée à la luminosité, permet de construire le diagramme de Hertzsprung-Russell, l'un des outils les plus utilisés en astrophysique stellaire.",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Classification_stellaire",
+              "role": "go-further"
+            }
+          ],
+
+          "quiz": [
+            {
+              "id": "classif-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "La séquence des classes spectrales stellaires, de la plus chaude à la plus froide, est :",
+              "choices": ["O B A F G K M", "M K G F A B O", "A B C D E F G", "G F E D C B A"],
+              "answerIndex": 0,
+              "explanation": "Moyen mnémotechnique courant : « Oh Be A Fine Girl/Guy, Kiss Me ».",
+              "reviewedBy": "a-valider",
+              "tags": ["classification", "sequence"]
+            },
+            {
+              "id": "classif-q2",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Le Soleil appartient à la classe spectrale :",
+              "choices": ["O", "G", "M", "B"],
+              "answerIndex": 1,
+              "explanation": "Le Soleil est une étoile de type G (G2V), avec une température de surface d'environ 5778 K.",
+              "reviewedBy": "a-valider",
+              "tags": ["classification", "soleil"]
+            },
+            {
+              "id": "classif-q3",
+              "type": "single",
+              "difficulty": 2,
+              "text": "Une étoile de classe M est généralement :",
+              "choices": ["Une géante bleue très chaude", "Une naine rouge relativement froide", "Une étoile à neutrons", "Un trou noir"],
+              "answerIndex": 1,
+              "explanation": "Les étoiles de type M, les plus froides et les plus nombreuses de la galaxie, sont le plus souvent des naines rouges.",
+              "reviewedBy": "a-valider",
+              "tags": ["classification", "naine-rouge"]
+            }
+          ]
+        },
+        {
+          "id": "redshift-loi-hubble",
+          "title": "Le décalage vers le rouge et la loi de Hubble",
+          "level": 2,
+          "prerequisites": ["spectre-loi-wien"],
+          "mathNeeded": ["proportionnalité", "notation scientifique"],
+          "estimatedMinutes": 20,
+
+          "summary": "Les raies du spectre d'une galaxie lointaine ne sont pas exactement aux longueurs d'onde attendues : elles sont décalées vers le rouge, c'est-à-dire vers les grandes longueurs d'onde. Edwin Hubble a montré en 1929 que ce décalage augmente avec la distance de la galaxie, et en a déduit une relation simple : v = H₀·d, où v est la vitesse de récession, d la distance, et H₀ la constante de Hubble (environ 70 km/s par mégaparsec). Cette loi a été la première preuve observationnelle que l'Univers est en expansion : les galaxies ne s'éloignent pas de nous en particulier, c'est l'espace lui-même qui s'étire partout.",
+
+          "videos": [
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR",
+              "lang": "fr",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "startSec": 0,
+              "endSec": null,
+              "difficulty": "intro"
+            },
+            {
+              "provider": "youtube",
+              "videoId": "VIDEO_ID_A_REMPLIR_EN",
+              "lang": "en",
+              "channel": "Nom de la chaîne",
+              "title": "Titre de la vidéo",
+              "difficulty": "intermediate"
+            }
+          ],
+
+          "readings": [
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/Loi_de_Hubble-Lema%C3%AEtre",
+              "role": "go-further"
+            },
+            {
+              "provider": "wikipedia",
+              "lang": "fr",
+              "url": "https://fr.wikipedia.org/wiki/D%C3%A9calage_vers_le_rouge",
+              "role": "go-further"
+            }
+          ],
+
+          "calculator": {
+            "id": "loi-hubble",
+            "inputs": [
+              { "name": "distance", "label": "Distance (mégaparsecs)", "min": 1, "max": 1000, "default": 16.5 }
+            ],
+            "formula": "v = H0 * d, H0 ~= 70 km/s/Mpc",
+            "outputLabel": "Vitesse de récession (km/s)"
+          },
+
+          "quiz": [
+            {
+              "id": "hubble-q1",
+              "type": "single",
+              "difficulty": 1,
+              "text": "Le décalage vers le rouge (redshift) d'une galaxie lointaine s'explique principalement par :",
+              "choices": [
+                "Le vieillissement de la lumière au cours du trajet",
+                "L'expansion de l'Univers qui étire les longueurs d'onde",
+                "La pollution lumineuse",
+                "La rotation de la galaxie sur elle-même"
+              ],
+              "answerIndex": 1,
+              "explanation": "L'espace lui-même s'étire pendant que la lumière voyage, ce qui étire aussi sa longueur d'onde vers le rouge.",
+              "reviewedBy": "a-valider",
+              "tags": ["hubble", "expansion"]
+            },
+            {
+              "id": "hubble-q2",
+              "type": "numeric",
+              "difficulty": 2,
+              "text": "Avec H₀ ≈ 70 km/s/Mpc, quelle est la vitesse de récession (en km/s) d'une galaxie située à 50 Mpc ?",
+              "answer": 3500,
+              "tolerance": 0.05,
+              "explanation": "v = H₀·d = 70 × 50 = 3500 km/s.",
+              "reviewedBy": "a-valider",
+              "tags": ["hubble", "calcul"]
+            },
+            {
+              "id": "hubble-q3",
+              "type": "single",
+              "difficulty": 1,
+              "text": "La loi de Hubble énonce que la vitesse de récession d'une galaxie est :",
+              "choices": [
+                "Inversement proportionnelle à sa distance",
+                "Proportionnelle à sa distance",
+                "Constante quelle que soit la distance",
+                "Proportionnelle au carré de sa distance"
+              ],
+              "answerIndex": 1,
+              "explanation": "v = H₀·d : la relation est une simple proportionnalité.",
+              "reviewedBy": "a-valider",
+              "tags": ["hubble", "proportionnalité"]
+            }
+          ]
         }
       ]
     }
   ],
 
   "newsSources": [
-    { "id": "cnes", "type": "rss", "lang": "fr", "url": "URL_RSS_A_REMPLIR" },
-    { "id": "arxiv-astro-ph", "type": "arxiv", "category": "astro-ph" }
+    { "id": "cnes", "type": "rss", "lang": "fr", "label": "CNES", "url": "URL_RSS_A_REMPLIR" },
+    { "id": "arxiv-astro-ph", "type": "arxiv", "lang": "en", "label": "arXiv astro-ph", "category": "astro-ph" },
+    { "id": "nasa-apod", "type": "apod", "lang": "en", "label": "NASA — Image du jour" },
+    { "id": "chaine-astro", "type": "youtube", "lang": "fr", "label": "Chaîne à choisir", "channelId": "CHANNEL_ID_A_REMPLIR" }
   ]
 }
